@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('hello/',hello), #pattern is path(<url>,<function>) 
     # mathi ko url lai if multiple apps xa vane savlai lekhera import garna jhyau hunxa tesko lagi yesto garne 
-    path("myapp/",include('myapp.urls')),
+    path("",include('myapp.urls')),
 ]
