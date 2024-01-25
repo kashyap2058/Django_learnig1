@@ -58,16 +58,10 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#services">Services</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item page-scroll" href="project.html">Project Details</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item page-scroll" href="terms.html">Terms Conditions</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item page-scroll" href="privacy.html">Privacy Policy</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#project">Projects</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#contact">Contact</a>
                     </li>
@@ -117,7 +111,7 @@
                 <div class="col-lg-4">
                     <div class="text-container first">
                         <h2>Hi there I'm Kashyap,</h2>
-                        <p>And I love to Create Machine Learning and AI models. I also can create beautiful and efficient SSR websites using Django. I love going through the entire process of development from concept, to design and then development and launch</p>
+                        <p>I love to Create Machine Learning and AI models. I also can create beautiful and efficient SSR websites using Django. I love going through the entire process of development from concept, to design and then development and launch</p>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
@@ -210,12 +204,12 @@
                             <p>I am familiar and work on a daily basis with HTML, CSS, JavaScript, Bootstrap and other modern frameworks</p>
                             
                             <div class="icons-container">
-                                <img src="images/details-icon-photoshop.png" alt="alternative">
-                                <img src="images/details-icon-illustrator.png" alt="alternative">
-                                <img src="images/details-icon-html.png" alt="alternative">
-                                <img src="images/details-icon-css.png" alt="alternative">
-                                <img src="images/details-icon-bootstrap.png" alt="alternative">
-                                <img src="images/details-icon-javascript.png" alt="alternative">
+                                <img src="{% static "images/details-icon-photoshop.png" %}" alt="alternative">
+                                <img src="{% static "images/details-icon-illustrator.png" %}" alt="alternative">
+                                <img src="{% static "images/details-icon-html.png" %}" alt="alternative">
+                                <img src="{% static "images/details-icon-css.png" %}" alt="alternative">
+                                <img src="{% static "images/details-icon-bootstrap.png" %}" alt="alternative">
+                                <img src="{% static "images/details-icon-javascript.png" %}" alt="alternative">
                             </div> <!-- end of icons-container -->
                         </div> <!-- end of text-container -->
                         <!-- end of text container -->
@@ -229,7 +223,7 @@
 
 
     <!-- Projects -->
-    <div id="projects" class="basic-3">
+    <div id="project" class="basic-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -237,40 +231,9 @@
                     <p class="p-heading">Listed below are some of the most representative projects I've worked on. They range from basic web design for presentation sites to advanced web development for online shops</p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/project-1.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Jumbotron, <strong>Project:</strong> web design for their corporate websites and landing pages for marketing campaigns <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/project-2.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Carsrepo, <strong>Project:</strong> designed and developed modern platform for purchasing second hand cars online <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/project-3.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Truevideo, <strong>Project:</strong> created a custom video editing and upload web app for this awesome team <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/project-4.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Evolosim, <strong>Project:</strong> complete redesign of their corporate website and platform update for their online shop <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
+ <!-- end of image-container -->
+                
+                    
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -286,7 +249,7 @@
                     <div class="text-container">
                         <div class="image-container">
                             <a href="project.html">
-                                <img class="img-fluid" src="images/work-1.jpg" alt="alternative">
+                                <img class="img-fluid" src="{% static "images/work-1.jpg" %}" alt="alternative">
                             </a>
                         </div> <!-- end of image-container -->
                         <p><strong>For:</strong> Zigoland, <strong>Project:</strong> started a new website from ground up for a new product <a class="blue" href="project.html">details</a></p>
@@ -296,7 +259,7 @@
                     <div class="text-container">
                         <div class="image-container">
                             <a href="project.html">
-                                <img class="img-fluid" src="images/work-2.jpg" alt="alternative">
+                                <img class="img-fluid" src="{% static "images/work-2.jpg" %}" alt="alternative">
                             </a>
                         </div> <!-- end of image-container -->
                         <p><strong>For:</strong> Visodream, <strong>Project:</strong> developed a new forum for the Visodream community <a class="blue" href="project.html">details</a></p>
@@ -306,7 +269,7 @@
                     <div class="text-container">
                         <div class="image-container">
                             <a href="project.html">
-                                <img class="img-fluid" src="images/work-3.jpg" alt="alternative">
+                                <img class="img-fluid" src="{% static "images/work-3.jpg" %}" alt="alternative">
                             </a>
                         </div> <!-- end of image-container -->
                         <p><strong>For:</strong> Primoday, <strong>Project:</strong> complete redesign of their corporate website and platform <a class="blue" href="project.html">details</a></p>
@@ -318,7 +281,7 @@
                     <div class="text-container">
                         <div class="image-container">
                             <a href="project.html">
-                                <img class="img-fluid" src="images/work-4.jpg" alt="alternative">
+                                <img class="img-fluid" src="{% static "images/work-4.jpg" %}" alt="alternative">
                             </a>
                         </div> <!-- end of image-container -->
                         <p><strong>For:</strong> Nextlite, <strong>Project:</strong> created a custom video editing and upload web app <a class="blue" href="project.html">details</a></p>
@@ -366,7 +329,7 @@
                         <div class="card-body">
                             <p class="testimonial-text">“Mark is a skilled developer which will do everything possible to deliver the project on time and I really appreciate that”</p>
                             <div class="details">
-                                <img src="images/testimonial-1.jpg" alt="alternative">
+                                <img src="{% static "images/testimonial-1.jpg" %}" alt="alternative">
                                 <div class="text">
                                     <div class="testimonial-author">Samantha Bloom</div>
                                     <div class="occupation">Team Leader - Syncnow</div>
@@ -381,7 +344,7 @@
                         <div class="card-body">
                             <p class="testimonial-text">“Loved to work with Mark he's such an awesome developer with great attention to details. He also has a great eye for design”</p>
                             <div class="details">
-                                <img src="images/testimonial-2.jpg" alt="alternative">
+                                <img src="{% static "images/testimonial-2.jpg" %}" alt="alternative">
                                 <div class="text">
                                     <div class="testimonial-author">John Rowling</div>
                                     <div class="occupation">Marketing Manager - Nexlite</div>
@@ -396,7 +359,7 @@
                         <div class="card-body">
                             <p class="testimonial-text">“So glad we started working with Mark. We've used many times his design and development skills for our inhouse online projects”</p>
                             <div class="details">
-                                <img src="images/testimonial-3.jpg" alt="alternative">
+                                <img src="{% static "images/testimonial-3.jpg" %}" alt="alternative">
                                 <div class="text">
                                     <div class="testimonial-author">Lana Smith</div>
                                     <div class="occupation">General Manager - Shifter</div>
@@ -422,88 +385,6 @@
         </div> <!-- end of row -->
     </div> <!-- end of container -->
     <!-- end of section divider -->
-
-
-    <!-- Questions -->
-    <div class="accordion-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Frequent questions</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <div class="accordion" id="accordionExample">
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    How can I contact you and quickly get a quote for my online project?
-                                </button>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Do you create designs from the ground up or you are using themes?
-                                </button>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Will I receive any included maintenance or warranty after project delivery?
-                                </button>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    If something goes wrong with the project can I have my money back?
-                                </button>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingFive">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    What's your preferred method of payment and do you need an advance?
-                                </button>
-                            </div>
-                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    The best way to reach me is through the contact form of by messaging me on my social media accounts. For a fast quote make sure your provide many project details
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end of accordion -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of accordion-1 -->
-    <!-- end of questions -->
-
 
     <!-- Contact -->
     <div id="contact" class="form-1 bg-gray">
@@ -561,6 +442,18 @@
                             <a href="https://www.instagram.com/kashyap.ghimire.9/" target="_blank">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://www.linkedin.com/in/kashyap-ghimire/" target="_blank">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://github.com/kashyap2058" target="_blank">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x"></i>
                             </a>
                         </span>
 

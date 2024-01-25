@@ -2,6 +2,11 @@ from django.urls import path
 from .views import *
 
 urlpatterns=[
-    path('hello/', hello),
-    path('',portfolio)
+    path('hello/',hellobase),
+    path('',portfolio,name='portfolio_page'),
+    path('home/',home,name='homepage'),
+    path('features/',features,name='featurespage'),
+    path('pricing/',pricing,name='pricepage'),
+    path('table/',template_table,name='table'),
+    
 ]
