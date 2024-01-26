@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import *
 # Create your views here.
 def hellobase(request):
     return render(request,'base.html')
@@ -14,7 +15,8 @@ def features(request):
     return render(request,'features.html')
 
 def pricing(request):
-    return render(request,'pricing.html')
+    data=Student.objects.all()
+    return render(request,'pricing.html',context={"students":data})
 
 def template_table(request):
 
