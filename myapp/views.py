@@ -29,3 +29,8 @@ def template_table(request):
     #for context passing, the data should be in a dictionary format 
     return render(request,'temp_inherit_table.html',context=data)
 
+def studentdetails(request):
+    student=Student.objects.all()
+    
+    context={"students": student}
+    return render(request,'student.html',context)

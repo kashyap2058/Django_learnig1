@@ -36,5 +36,24 @@ class StudentProfile(models.Model):
     bio=models.TextField(max_length=500)
     profile_pic=models.FileField(null=True, blank=True,upload_to="profile_pics")
 
+    def __str__(self):
+        roll=str(self.roll_no)
+        return roll
+
+
+#for many to many mapping
+
+class Publication(models.Model):
+    title = models.CharField(max_length=30)
+    def __str__(self):
+        return self.title
+    
+class Article(models.Model):
+    headline = models.CharField(max_length=100)
+    publications = models.ManyToManyField(Publication) #many to many mapping
+    
+    def __str__(self):
+        return self.headline
+
 
     

@@ -8,5 +8,6 @@ urlpatterns=[
     path('features/',features,name='featurespage'),
     path('pricing/',pricing,name='pricepage'),
     path('table/',template_table,name='table'),
+    path('student/',studentdetails,name='studentpage'),
     
 ]
