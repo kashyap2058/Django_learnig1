@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h1>Classroom Form</h1>
+    <div class="container">
+        
+        <form method='post' action={% url "add_classroom" %}> {% comment %} method = post le server ma data pathaune kaam garxa ani action le chai submit vayesi typ url ma lagdine kaam garxa{% endcomment %}
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" name='classname'> {% comment %} yo name chai important xa yei name ko use hamile database ma halna lai use garxam {% endcomment %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for classroom in classrooms %}
+            <tr>
+                {% comment %} forloop.counter le number badauxa ie i ko value jastei for i in range wala ma jastei {% endcomment %}
+                <th scope="row">{{ classroom.id }}</th>
+                <td>{{ classroom.class_name }}</td>
+               
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    
+{% endblock content %}
