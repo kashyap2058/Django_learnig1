@@ -1,6 +1,10 @@
 from django.shortcuts import render,HttpResponse,redirect
 from myapp.models import ClassRoom
 # Create your views here.
+
+
+
+#Create operation:
 def add_classroom(request):
 
     classrooms=ClassRoom.objects.all()
