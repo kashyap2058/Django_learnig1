@@ -1,35 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
+<div class='container'>
     <h2>This is Student and Student profile table</h2>
     <table class="table">
-        <thead>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          {% comment %} <th scope="col">Age</th> {% endcomment %}
+          <th scope="col">Roll_no</th>
+          {% comment %} <th scope="col">Address</th> {% endcomment %}
+          <th scope="col">email</th>
+          <th scope="col">Class</th>
+          {% comment %} <th scope="col">Phone</th> {% endcomment %}
+          {% comment %} <th scope="col">Roll_no</th> {% endcomment %}
+          {% comment %} <th scope="col">Bio</th> {% endcomment %}
+          {% comment %} adding action column for allowing to update and delete records {% endcomment %}
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for student in students %}
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Age</th>
-            <th scope="col">Address</th>
-            <th scope="col">email</th>
-            <th scope="col">phone</th>
-            <th scope="col">roll no</th>
-            <th scope="col">bio</th>
-          </tr>
-        </thead>
-        <tbody>
-            {% for student in students %}
-            <tr>
-                {% comment %} forloop.counter le number badauxa ie i ko value jastei for i in range wala ma jastei {% endcomment %}
-                <th scope="row">{{ student.id }}</th>
-                <td>{{ student.name }}</td>
-                <td>{{ student.age }}</td>
-                <td>{{ student.address }}</td>
-                <td>{{ student.email }}</td>
-                <td>{{ student.studentprofile.phone }}</td>
-                <td>{{ student.studentprofile.roll_no }}</td>
-                <td>{{ student.studentprofile.bio }}</td>
-              </tr>
-            {% endfor %}
-        </tbody>
-      </table>
+              {% comment %} forloop.counter le number badauxa ie i ko value jastei for i in range wala ma jastei {% endcomment %}
+              <th scope="row">{{ student.id }}</th>
+              <td>{{ student.student.name }}</td>
+              {% comment %} <td>{{ student.student.age }}</td> {% endcomment %}
+              <td>{{ student.roll_no }}</td>
+              {% comment %} <td>{{ student.student.address }}</td> {% endcomment %}
+              <td>{{ student.student.email }}</td>
+              <td>{{ student.student.classroom.class_name }}</td>
+              {% comment %} <td>{{ student.phone }}</td>
+              <td>{{ student.roll_no }}</td> {% endcomment %}
+              {% comment %} <td>{{ student.bio }}</td> {% endcomment %}
+              <td>
+                <a class="btn btn-primary" href="{% url "details_student" student.id %}">Details</a>
+                
+                <a class="btn btn-danger"href="{% url "delete_student" student.id %}">Delete</a>
+              </td>
+            </tr>
+          {% endfor %}
+      </tbody>
+    </table>
 </div>
 {% endblock content %}

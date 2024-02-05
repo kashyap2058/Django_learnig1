@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <img src="{% static "forms/pic.jpg" %}" alt="">
+<div class="container" align='center'>
+    <h2>The details for {{ student.student.name }}</h2>
+    {% if student.profile_pic %}
+    <div class="container">
+        <img src="{{ student.profile_pic.url }}" style="height:100px; width:100px">
+    </div>
+    
+    {% else %}
+        <div class="container">
+            <img src="{% static '\forms\pic.jpg' %}"  style="height:100px; width:100px" alt='pp'>
+        </div>
+    {% endif %}
+    <table class="table" style="width:60%">
+        <tr>
+            <td><strong>Name:</strong></td>
+            <td>{{ student.student.name }}</td>
+        </tr>
+        <tr>
+            <td><strong>Age:</strong></td>
+            <td>{{ student.student.age }}</td>
+        </tr>
+        <tr>
+            <td><strong>Address:</strong></td>
+            <td>{{ student.student.address }}</td>
+        </tr>
+        <tr>
+            <td><strong>Email:</strong></td>
+            <td>{{ student.student.email }}</td>
+        </tr>
+        <tr>
+            <td><strong>Class:</strong></td>
+            <td>{{ student.student.classroom.class_name }}</td>
+        </tr>
+        <tr>
+            <td><strong>Roll no:</strong></td>
+            <td>{{ student.roll_no }}</td>
+        </tr>
+        <tr>
+            <td><strong>Phone number</strong></td>
+            <td>{{ student.phone }}</td>
+        </tr>
+        <tr>
+            <td><strong>Bio:</strong></td>
+            <td>{{ student.bio }}</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="#">Update</a>
+    <a href="{% url "studentpage" %}" class="btn btn-danger">Cancel</a>
+
+</div>
+{% endblock content %}

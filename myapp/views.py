@@ -30,7 +30,7 @@ def template_table(request):
     return render(request,'temp_inherit_table.html',context=data)
 
 def studentdetails(request):
-    student=Student.objects.all()
+    studentprofile=StudentProfile.objects.all()
     
-    context={"students": student}
+    context={"students": studentprofile}
     return render(request,'student.html',context)

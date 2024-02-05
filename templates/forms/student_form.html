@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add student</h2>
+<div class="container" >
+        
+    <form method='post' action={% url "add_student" %} enctype='multipart/form-data'> {% comment %} method = post le server ma data pathaune kaam garxa ani action le chai submit vayesi typ url ma lagdine kaam garxa{% endcomment %}
+        {% csrf_token %}
+        <label for="name">Name</label><br>
+        <input type="text" name='stdname'> 
+        <br>
+        <label for="name">Age</label><br>
+        <input type="number" name='stdage'> <br>
+        <label for="name">Address</label><br>
+        <input type="text" name='stdaddress'> <br>
+        <label for="name">Email</label><br>
+        <input type="email" name='stdemail'> <br>
+        <label for="classroom">Classroom</label> <br>
+        <select name="classselect" id="">
+            <option selected>Choose..</option>
+            {% for classroom in classrooms %}
+            <option value={{ classroom.id }}>{{classroom.class_name}}</option> {% comment %}Backend ma kun classroom select garyo tesko id janxa value ma classroom id deko vayera{% endcomment %}
+            {% endfor %}
+        </select><br>
+        <label for="name">Phone Number</label><br>
+        <input type="text" name='sphone'> <br>
+        <label for="name">Bio</label><br>
+        <textarea name='sbio' placeholder="bio"> </textarea> <br>
+        <label for="name">Roll no.</label><br>
+        <input type="number" name='sroll'> <br>
+        <label for="name">Profile pic</label><br>
+        <input type="file" name='spic'> <br>
+        {% comment %} <label for="name">Classroom</label>
+        <input type="text" name='stdclassroom'> <br> {% endcomment %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+ 
+
+
+{% endblock content %}
