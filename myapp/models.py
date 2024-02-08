@@ -32,7 +32,7 @@ class Student(models.Model):
 class StudentProfile(models.Model):
     student=models.OneToOneField(Student,on_delete=models.CASCADE)
     phone=models.CharField(max_length=14)
-    roll_no=models.IntegerField()
+    roll_no=models.IntegerField(unique=True)
     bio=models.TextField(max_length=500)
     profile_pic=models.FileField(null=True, blank=True,upload_to="profile_pics")
 
