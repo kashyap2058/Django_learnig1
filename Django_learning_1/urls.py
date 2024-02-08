@@ -26,6 +26,7 @@ urlpatterns = [
     # mathi ko url lai if multiple apps xa vane savlai lekhera import garna jhyau hunxa tesko lagi yesto garne 
     path("",include('myapp.urls')),
     path("crud/",include('forms.urls')),
+    path("classbased/",include('classbased_app.urls')),
 ]
 
 #for accessing media
