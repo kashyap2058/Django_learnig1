@@ -60,3 +60,33 @@ def delete_student(request,id): #url bata pathako id lai views ma catch garna mi
 def details_student(request,id):
     student=StudentProfile.objects.get(id=id)
     return render(request,'forms/details_student.html',context={'student':student})
+
+
+def student_update(request,id):
+    classrooms=ClassRoom.objects.all()
+    student=StudentProfile.objects.get(id=id)
+    context={'student':student,
+             'classrooms':classrooms}
+    if request.method=='POST':
+        sname=request.POST.get('stdname')
+        sage=request.POST.get('stdage')
+        saddress=request.POST.get('stdaddress')
+        semail=request.POST.get('stdemail')
+        sclassroom=request.POST.get('classselect')
+        studenttabledata=Student.objects.filter(id=student.student_id).update(name=sname,age=sage,address=saddress,email=semail,classroom_id=sclassroom) #yesto chai hamile student profile ma student saga relationship rakheko vaye garna milthyo but yo case ma tala jasari garna parxa coz student ko data hamilai chainxa studentprofile ma halna
+
+        sphone=request.POST.get('sphone')
+        sbio=request.POST.get('sbio')
+        sroll=request.POST.get('sroll')
+        spic=request.FILES.get('spic') #pic is a file so get garda files bata garne
+        
+        StudentProfile.objects.filter(id=id).update(roll_no=sroll,phone=sphone,bio=sbio)
+        
+        if spic:
+            student.profile_pic=spic
+            student.save()
+
+        
+        return redirect('studentpage')
+    
+    return render(request,'forms/update_details.html',context=context)

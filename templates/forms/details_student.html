@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-    <img src="{% static "forms/pic.jpg" %}" alt="">
 <div class="container" align='center'>
     <h2>The details for {{ student.student.name }}</h2>
     {% if student.profile_pic %}
@@ -49,7 +48,7 @@
             <td>{{ student.bio }}</td>
         </tr>
     </table>
-    <a class="btn btn-primary" href="#">Update</a>
+    <a class="btn btn-primary" href="{% url "update_student" student.id %}">Update</a>
     <a href="{% url "studentpage" %}" class="btn btn-danger">Cancel</a>
 
 </div>

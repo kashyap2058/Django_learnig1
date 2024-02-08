@@ -35,6 +35,7 @@
               {% comment %} <td>{{ student.bio }}</td> {% endcomment %}
               <td>
                 <a class="btn btn-primary" href="{% url "details_student" student.id %}">Details</a>
+                <a class="btn btn-success" href="{% url "update_student" student.id %}">Update</a>
                 
                 <a class="btn btn-danger"href="{% url "delete_student" student.id %}">Delete</a>
               </td>
