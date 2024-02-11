@@ -4,10 +4,11 @@
 <h1>Classroom Form</h1>
 <div class="container">
     
-    <form method='post' action={% url "add_classroom" %}> {% comment %} method = post le server ma data pathaune kaam garxa ani action le chai submit vayesi typ url ma lagdine kaam garxa{% endcomment %}
+    <form method='post' action={% url "classbased_classroom" %}> {% comment %} method = post le server ma data pathaune kaam garxa ani action le chai submit vayesi typ url ma lagdine kaam garxa{% endcomment %}
         {% csrf_token %}
-        <label for="name">Name</label>
-        <input type="text" name='classname'> {% comment %} yo name chai important xa yei name ko use hamile database ma halna lai use garxam {% endcomment %}
+        {% comment %} <label for="name">Name</label> {% endcomment %}
+        {{ form }} {% comment %} yo form chai sidhai forms.py ma vako classname lai dekhauxa{% endcomment %}
+        {% comment %} yo name chai important xa yei name ko use hamile database ma halna lai use garxam {% endcomment %}
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 </div>
