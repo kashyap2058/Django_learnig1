@@ -12,23 +12,31 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 </div>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-      </tr>
-    </thead>
-    <tbody>
-        {% for classroom in classrooms %}
-        <tr>
-            {% comment %} forloop.counter le number badauxa ie i ko value jastei for i in range wala ma jastei {% endcomment %}
-            <th scope="row">{{ classroom.id }}</th>
-            <td>{{ classroom.class_name }}</td>
-           
+<div class="container" align='center'>
+    <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
           </tr>
-        {% endfor %}
-    </tbody>
-  </table>
+        </thead>
+        <tbody>
+            {% for classroom in classrooms %}
+            <tr>
+                {% comment %} forloop.counter le number badauxa ie i ko value jastei for i in range wala ma jastei {% endcomment %}
+                <th scope="row">{{ classroom.id }}</th>
+                <td>{{ classroom.class_name }}</td>
+                <td>
+                    <a class="btn btn-success" href="#">Update</a>
+                    <a class="btn btn-danger"href="{% url "classbased_deleteclass" classroom.id%}">Delete</a>
+                  </td>
+               
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    
+</div>
 {% endblock content %}
 
