@@ -53,3 +53,9 @@
 
 </div>
 {% endblock content %}
+
+
+<form method='post' action="{% url "update_student" student.id %}" enctype='multipart/form-data'> {% comment %} method = post le server ma data pathaune kaam garxa ani action le chai submit vayesi typ url ma lagdine kaam garxa{% endcomment %}
+    {% comment %} {% csrf_token %} {% endcomment %}
+    
+  </form>

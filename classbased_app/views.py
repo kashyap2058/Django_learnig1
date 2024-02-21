@@ -1,6 +1,6 @@
 from typing import Any
 from django.shortcuts import render,redirect
-from django.views.generic import TemplateView,ListView,CreateView
+from django.views.generic import TemplateView,ListView,CreateView,UpdateView
 from myapp.models import ClassRoom,Student,StudentProfile
 from .forms import ClassRoomModelForms,StudentProfileForms
 
@@ -53,3 +53,10 @@ def delete_class(request,id):
         ClassRoom.objects.get(id=id).delete()
         return redirect('classbased_classroom')
     return render(request,'classbased/delete.html',context={'classroom':ClassRoom.objects.get(id=id)})
+
+class ClassRoomUpdateView(UpdateView):
+    template_name="classbased/classroom_update.html"
+    form_class=ClassRoomModelForms
+    queryset=ClassRoom.objects.all()
+    success_url=reverse_lazy("classbased_classroom") #yesle sumbit vaye yo url ma lanxa
+    

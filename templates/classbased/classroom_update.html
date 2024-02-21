@@ -1,0 +1,12 @@
+{% extends "classbased/base.html" %}
+{% block content %}
+<h1>Update Classroom</h1>
+<form method='post' action="{% url "classbased_updateclass" classroom.id %}"> 
+    {% csrf_token %}
+    {% comment %} <label for="name">Name</label> {% endcomment %}
+    {{ form }} {% comment %} yo form chai sidhai forms.py ma vako classname lai dekhauxa{% endcomment %}
+    {% comment %} yo name chai important xa yei name ko use hamile database ma halna lai use garxam {% endcomment %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock content %}

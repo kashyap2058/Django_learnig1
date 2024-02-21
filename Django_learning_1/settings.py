@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'myapp',
     'forms',
     'classbased_app',
+    'api',
 ]
 
 MIDDLEWARE = [
