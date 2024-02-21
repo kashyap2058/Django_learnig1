@@ -11,4 +11,4 @@ class ClassRoomModelForms(forms.ModelForm):
 class StudentProfileForms(forms.ModelForm):
     class Meta:
         model=StudentProfile
-        fields=["student_id","phone","roll_no","bio","profile_pic",]
+        fields=["phone","roll_no","bio","profile_pic",]

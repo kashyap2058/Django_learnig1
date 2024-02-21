@@ -2,7 +2,7 @@ from typing import Any
 from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,ListView,CreateView
 from myapp.models import ClassRoom,Student,StudentProfile
-from .forms import ClassRoomModelForms
+from .forms import ClassRoomModelForms,StudentProfileForms
 
 #to redirect after a form has been submitted
 from django.urls import reverse_lazy
@@ -32,9 +32,15 @@ class ClassRoomView(CreateView):
         return context
 
 
-class AddStudentView(ListView):
+class AddStudentView(CreateView):
+    form_class=StudentProfileForms
     template_name='classbased/add_student.html'
-    pass
+    success_url=reverse_lazy('classbased_std')
+    
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data()
+        context['classrooms']=ClassRoom.objects.all()
+        return context
 
 class StudentView(ListView):
     template_name='classbased/student.html'
